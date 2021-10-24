@@ -1,0 +1,70 @@
+$main-color: #2d3439;
+$second-color:#f4cb67;
+$main-btn-color:#6bba7c;
+$second-btn-color:#c6ccd2;
+
+@mixin mainBtn(){
+    background-color: $main-btn-color !important;
+    color:white !important;
+    border:none !important;
+    outline:none !important;
+    transition-duration: 200ms;
+}
+@mixin mainBtn-active(){
+    box-shadow: 0 0 0 .25rem rgba($main-btn-color, 0.4);
+}
+@mixin mainBtn-focus(){
+    box-shadow: 0 0 0 .25rem rgba($main-btn-color, 0.4);
+}
+
+@mixin secondBtn(){
+    background-color: $second-btn-color !important;
+    // color:#444444 !important;
+    color:white !important;
+    border:none !important;
+    outline:none !important;
+	font-weight:600 !important;
+	transition-duration: 200ms !important;
+}
+@mixin secondBtn-active(){
+    box-shadow: 0 0 0 .25rem rgba($second-btn-color, 0.4);
+}
+@mixin secondBtn-focus(){
+    box-shadow: 0 0 0 .25rem rgba($second-btn-color, 0.4);
+}
+
+.rc-search_form{
+    background-color: $main-color !important;
+
+    &__btn__wrapper button{
+        @include mainBtn();
+    }
+    &__btn__wrapper button:active{
+        @include mainBtn-active();
+    }
+    &__btn__wrapper button:focus{
+        @include mainBtn-focus();
+    }
+}
+
+.rc-flat{
+    &__more__btn{
+        @include secondBtn();
+    }
+    &__more__btn:active{
+        @include secondBtn-active();
+    }
+    &__more__btn:focus{
+        @include secondBtn-focus();
+    }
+
+    &__book__btn{
+        @include mainBtn();
+    }
+    &__book__btn:active{
+        @include mainBtn-active();
+    }
+    &__book__btn:focus{
+        @include mainBtn-focus();
+    }
+}
